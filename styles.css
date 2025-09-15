@@ -1,0 +1,137 @@
+/* Base styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  background: #f9fafb;
+  color: #111827;
+}
+
+header {
+  background: #1f2937;
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+}
+
+/* ---------------------------
+   Part 1: CSS Transitions & Animations
+---------------------------- */
+.cta-btn {
+  background: #1f2937;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.cta-btn:hover {
+  background: #22c55e;
+  transform: scale(1.1);
+}
+
+@keyframes fadeSlideIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.fade-in {
+  animation: fadeSlideIn 1s ease forwards;
+}
+
+.circle {
+  width: 100px;
+  height: 100px;
+  background: #3b82f6;
+  border-radius: 50%;
+  margin: 20px auto;
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+/* ---------------------------
+   Part 3: Box Animation
+---------------------------- */
+.box {
+  width: 100px;
+  height: 100px;
+  background: #3b82f6;
+  margin: 20px 0;
+  transition: transform 1s ease;
+}
+.box.move {
+  transform: translateX(200px) rotate(45deg);
+}
+
+/* Card Flip */
+.card {
+  width: 150px;
+  height: 200px;
+  perspective: 1000px;
+  cursor: pointer;
+}
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+.card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  border: 2px solid #333;
+  border-radius: 8px;
+}
+.card-front { background: #22c55e; }
+.card-back { background: #f97316; transform: rotateY(180deg); }
+
+/* Modal */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: none; 
+  align-items: center;
+  justify-content: center;
+}
+.modal.show {
+  display: flex;
+  animation: fadeIn 0.5s forwards;
+}
+.modal.hide {
+  animation: fadeOut 0.5s forwards;
+}
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  transform: translateY(-50px);
+  animation: slideIn 0.5s forwards;
+}
+.close {
+  font-size: 24px;
+  cursor: pointer;
+  float: right;
+}
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes fadeOut { from { opacity: 1; } to { opacity: 0; } }
+@keyframes slideIn { from { transform: translateY(-50px); } to { transform: translateY(0); } }

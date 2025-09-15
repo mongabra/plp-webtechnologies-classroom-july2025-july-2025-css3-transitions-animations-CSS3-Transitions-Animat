@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Interactive Portfolio Project</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1 class="title">My Interactive Project</h1>
+  </header>
+
+  <main>
+    <!-- Part 1: CSS Transitions & Animations -->
+    <section>
+      <h2 class="fade-in">Welcome Section</h2>
+      <p>This section demonstrates CSS transitions and keyframe animations.</p>
+      <button class="cta-btn">Hover Me</button>
+      <div class="circle"></div>
+    </section>
+
+    <!-- Part 2: Functions, Scope, Parameters, Return -->
+    <section id="calc-section">
+      <h2>Function Demo</h2>
+      <p id="calc-result">Click to calculate area of a rectangle.</p>
+      <button onclick="showArea(5, 10)">Calculate Area</button>
+    </section>
+
+    <section id="color-section">
+      <h2>Random Color Generator</h2>
+      <p>Click to change this section’s background color.</p>
+      <button onclick="applyRandomColor()">Change Color</button>
+    </section>
+
+    <!-- Part 3: JS + CSS Animations -->
+    <section id="animation-section">
+      <h2>Click to Animate Box</h2>
+      <button onclick="animateBox()">Animate Box</button>
+      <div id="box" class="box"></div>
+    </section>
+
+    <section id="card-section">
+      <h2>Card Flip Example</h2>
+      <div class="card" onclick="flipCard(this)">
+        <div class="card-inner">
+          <div class="card-front">Front</div>
+          <div class="card-back">Back</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="modal-section">
+      <h2>Modal Demo</h2>
+      <button onclick="openModal()">Open Modal</button>
+      <div id="modal" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal()">&times;</span>
+          <h3>Hello from Modal!</h3>
+          <p>This modal slides and fades in/out.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
